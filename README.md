@@ -11,6 +11,15 @@ python tools/serve.py
 then open http://localhost:4174 (or use the `siaara` launch configuration).
 The dev server sends `Cache-Control: no-store` so edited modules always reach the browser.
 
+The bind address is configurable for sandboxed / proxied preview
+environments that need the server reachable on all interfaces:
+
+```
+HOST=0.0.0.0 PORT=4174 python tools/serve.py
+```
+
+`HOST` defaults to `0.0.0.0`; pass `HOST=127.0.0.1` to keep it local-only.
+
 ## Deploy
 
 The site is fully static (no build step, no server code) — any static
