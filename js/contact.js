@@ -8,15 +8,22 @@
 import { t as translate } from './i18n.js';
 import { registerReveal } from './scroll.js';
 
-/* every piece of contact data lives here — update once, applies everywhere */
+/* every piece of contact data lives here — update once, applies everywhere.
+   Source: the shop's verified Google Business Profile
+   ("Saree Ghar | Best Saree Shop", Gorakhpur, Uttar Pradesh). */
 export const BRAND = {
-  email: 'siaarabysa@gmail.com',
-  instagram: 'siaarabysa',
-  instagramUrl: 'https://www.instagram.com/siaarabysa',
-  phone: null,                       /* no verified number yet — never invented */
-  location: 'Jubilee Hills, Hyderabad, Telangana 500033, India',
+  name: 'Saree Ghar | Best Saree Shop',
+  email: 'siaarabysa@gmail.com',     /* still the working inbox — swap when a shop address exists */
+  instagram: 'sareeghar_gkp',
+  instagramUrl: 'https://www.instagram.com/sareeghar_gkp/',
+  phone: '+91 87951 19537',          /* listed on the Google profile */
+  location: 'Ground Floor, Harbans Complex, Vijay Chowk, near Vijay Cinemas, Gorakhpur, Uttar Pradesh 273001, India',
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=' +
-    encodeURIComponent('Jubilee Hills, Hyderabad, Telangana 500033'),
+    encodeURIComponent('Saree Ghar, Ground Floor, Harbans Complex, Vijay Chowk, near Vijay Cinemas, Gorakhpur, Uttar Pradesh 273001'),
+  /* Google rating as published on the business profile */
+  rating: { value: '4.8', count: 394 },
+  reviewsUrl: 'https://www.google.com/search?ludocid=296183324800323483' +
+    '#lrd=0x3991446883ee437d:0x41c412a271e0f9b,1',
 };
 
 function applyBrand() {
@@ -27,6 +34,12 @@ function applyBrand() {
   document.getElementById('ctDirections').href = BRAND.mapsUrl;
   document.getElementById('ctOpenMaps').href = BRAND.mapsUrl;
   document.getElementById('ctInstagram').href = BRAND.instagramUrl;
+
+  const handle = document.getElementById('ctIgHandle');
+  if (handle) handle.textContent = '@' + BRAND.instagram;
+
+  const reviews = document.getElementById('ctReviews');
+  if (reviews) reviews.href = BRAND.reviewsUrl;
 
   if (BRAND.phone) {
     const p = document.getElementById('ctPhone');
@@ -153,6 +166,15 @@ function buildReveals() {
       autoAlpha: 1, y: 0, duration: 0.9, ease: 'power2.out', stagger: 0.12,
     }, 0.45);
   registerReveal('.ci', ciTl);
+
+  gsap.set('.cr-head > *', { autoAlpha: 0, y: 18 });
+  gsap.set('.cr-card', { autoAlpha: 0, y: 22 });
+  const crTl = gsap.timeline({
+    scrollTrigger: { trigger: '.cr', start: 'top 76%', once: true },
+  })
+    .to('.cr-head > *', { autoAlpha: 1, y: 0, duration: 0.85, ease: 'power3.out', stagger: 0.1 }, 0)
+    .to('.cr-card', { autoAlpha: 1, y: 0, duration: 0.9, ease: 'power3.out', stagger: 0.12 }, 0.2);
+  registerReveal('.cr', crTl);
 
   gsap.set('.cl-photo', { clipPath: 'inset(0% 100% 0% 0%)' });
   gsap.set('.cl-center > *', { autoAlpha: 0, y: 18 });

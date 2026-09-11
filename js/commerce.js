@@ -150,7 +150,7 @@ function renderHeader() {
       <span class="lang-sep" aria-hidden="true"></span>
       <button class="lang-btn" data-lang="te" lang="te" aria-pressed="false">తెలుగు</button>
     </div>
-    <a class="mm-ig" href="https://www.instagram.com/siaarabysa" target="_blank" rel="noopener">@siaarabysa</a>`;
+    <a class="mm-ig" href="https://www.instagram.com/sareeghar_gkp/" target="_blank" rel="noopener">@sareeghar_gkp</a>`;
   document.body.appendChild(menu);
 
   document.querySelector('.menu-btn').addEventListener('click', () => {
@@ -770,7 +770,7 @@ function pageAuth(mode) {
 }
 
 /* ─────────────────────────────────────────────
-   checkout — login-gated; Hyderabad-only delivery
+   checkout — login-gated; Gorakhpur-only delivery
    ───────────────────────────────────────────── */
 
 function pageCheckout() {

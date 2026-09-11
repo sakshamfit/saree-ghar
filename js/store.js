@@ -114,9 +114,9 @@ export function saveAddress(addr) { write(K.address, addr); }
 /* ── delivery area (configurable — add cities here later) ── */
 
 export const DELIVERY = {
-  state: 'telangana',
-  cities: ['hyderabad', 'secunderabad'],
-  pinPattern: /^50[01]\d{3}$/,
+  state: 'uttar pradesh',
+  cities: ['gorakhpur'],
+  pinPattern: /^273\d{3}$/,          /* Gorakhpur district PINs */
 };
 
 export function deliverable(addr) {
