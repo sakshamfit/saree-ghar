@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   SIAARA — hero
+   Saree Ghar — hero
    Live editorial composition over the clean plate.
    Copy column positions derive from the 1600×900
    reference; the header is the refined couture
@@ -389,7 +389,7 @@ a.icon-btn { display: inline-block; text-decoration: none; }
 .cta:hover svg { transform: translateX(6px); }
 .cta:active { transform: translateY(0) scale(0.985); }
 
-/* ─────────── the Siaara signature (design statement) ─────────── */
+/* ─────────── the Saree Ghar signature (design statement) ─────────── */
 
 .signature {
   margin-top: 4.2vh;

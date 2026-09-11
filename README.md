@@ -1,4 +1,4 @@
-# SIAARA — By S&A
+# Saree Ghar — Best Saree Shop, Gorakhpur
 
 Premium saree e-commerce website. Built stage by stage from the brand's visual references.
 
@@ -79,7 +79,7 @@ rise in the wake of the hem → the same logo rolls continuously into the header
   small-caps nav centered, right utility cluster (language switch · search ·
   account · bag · count), and a fading hairline that ties it to the scene.
   It emerges softly (opacity + minimal y) after the hero copy begins.
-- "The Siaara Signature" block: overline + fading rule + three left-aligned
+- "The Saree Ghar Signature" block: overline + fading rule + three left-aligned
   grid columns (no borders, no cards) — the collection statement.
 - తెలుగు/English switch in the header: crossfades all copy in place with no
   layout jump (the display box height is language-invariant); choice persists;

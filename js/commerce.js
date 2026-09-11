@@ -70,8 +70,8 @@ function renderHeader() {
   const host = document.getElementById('siteHeader');
   host.innerHTML = `
     <div id="logoSlot" aria-hidden="true"></div>
-    <a class="hdr-logo-link" href="index.html" aria-label="SIAARA — home">
-      <img id="logo" class="is-landed in-header" src="assets/img/logo.png" alt="SIAARA By S&amp;A" draggable="false">
+    <a class="hdr-logo-link" href="index.html" aria-label="Saree Ghar — home">
+      <img id="logo" class="is-landed in-header" src="assets/img/logo.png" alt="Saree Ghar" draggable="false">
     </a>
 
     <nav id="mainNav" aria-label="Primary">
@@ -512,7 +512,7 @@ function pageProduct() {
     if (moreHost) moreHost.innerHTML = '';
     return;
   }
-  document.title = p.name.en + ' — SIAARA By S&A';
+  document.title = p.name.en + ' — Saree Ghar';
   backFallback = 'collections.html?type=' + p.sareeType;
   const L = getLang();
   const type = typeByKey(p.sareeType);

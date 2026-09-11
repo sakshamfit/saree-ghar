@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════
    trail — the visitor's in-site journey, kept in
    sessionStorage so the Back button knows whether
-   real history leads to another SIAARA page or
+   real history leads to another Saree Ghar page or
    whether it should step up the hierarchy instead
    (deep links, fresh tabs).
    ═══════════════════════════════════════════════ */

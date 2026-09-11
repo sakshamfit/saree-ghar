@@ -285,7 +285,7 @@ export const PRODUCTS = [
     ...media('tulip-sky-blue', ['01', '02', '03']),
     name: { en: 'Sky Blue Tulip Mul', te: 'స్కై బ్లూ తులిప్ మల్' },
     desc: {
-      en: 'Sky blue mul with violet tulip embroidery and teal tassels — photographed in the SIAARA studio arch.',
+      en: 'Sky blue mul with violet tulip embroidery and teal tassels — photographed in the Saree Ghar studio arch.',
       te: 'స్కై బ్లూ మల్ — ఊదా తులిప్ కుట్టుపని, టీల్ కుచ్చులు.',
     },
     fabric: MUL_FABRIC,
@@ -298,7 +298,7 @@ export const PRODUCTS = [
     ...media('tulip-sage', ['01', '02'], ['video01']),
     name: { en: 'Sage Tulip Mul', te: 'సేజ్ తులిప్ మల్' },
     desc: {
-      en: 'Sage green mul with quiet tulip motifs and teal tassels, draped in the SIAARA studio arch.',
+      en: 'Sage green mul with quiet tulip motifs and teal tassels, draped in the Saree Ghar studio arch.',
       te: 'సేజ్ గ్రీన్ మల్ — తులిప్ అల్లికలు, టీల్ కుచ్చులు.',
     },
     fabric: MUL_FABRIC,

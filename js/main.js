@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   SIAARA — entry point
+   Saree Ghar — entry point
    ═══════════════════════════════════════════════ */
 
 import { startIntro } from './intro.js';

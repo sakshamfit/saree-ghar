@@ -13,7 +13,7 @@ import { registerReveal } from './scroll.js';
    ("Saree Ghar | Best Saree Shop", Gorakhpur, Uttar Pradesh). */
 export const BRAND = {
   name: 'Saree Ghar | Best Saree Shop',
-  email: 'siaarabysa@gmail.com',     /* still the working inbox — swap when a shop address exists */
+  email: null,                       /* no inbox on the Google listing — form falls back to phone/Instagram */
   instagram: 'sareeghar_gkp',
   instagramUrl: 'https://www.instagram.com/sareeghar_gkp/',
   phone: '+91 87951 19537',          /* listed on the Google profile */
@@ -28,8 +28,10 @@ export const BRAND = {
 
 function applyBrand() {
   const email = document.getElementById('ctEmail');
-  email.href = 'mailto:' + BRAND.email;
-  email.textContent = BRAND.email;
+  if (email && BRAND.email) {
+    email.href = 'mailto:' + BRAND.email;
+    email.textContent = BRAND.email;
+  }
 
   document.getElementById('ctDirections').href = BRAND.mapsUrl;
   document.getElementById('ctOpenMaps').href = BRAND.mapsUrl;
@@ -98,22 +100,28 @@ function wireForm() {
       return;
     }
 
-    /* no backend yet — hand off honestly to the visitor's email app,
-       prefilled and addressed to the real brand inbox */
-    const topicText = form.subject.options[form.subject.selectedIndex].textContent;
-    const mail = `mailto:${BRAND.email}` +
-      `?subject=${encodeURIComponent('[SIAARA] ' + topicText)}` +
-      `&body=${encodeURIComponent(`${message}\n\n— ${name}\n${email}`)}`;
+    if (BRAND.email) {
+      /* hand off honestly to the visitor's email app, prefilled and
+         addressed to the real brand inbox */
+      const topicText = form.subject.options[form.subject.selectedIndex].textContent;
+      const mail = `mailto:${BRAND.email}` +
+        `?subject=${encodeURIComponent('[Saree Ghar] ' + topicText)}` +
+        `&body=${encodeURIComponent(`${message}\n\n— ${name}\n${email}`)}`;
 
-    send.disabled = true;
-    sendLabel.textContent = translate('ct.sending');
-    window.location.href = mail;
+      send.disabled = true;
+      sendLabel.textContent = translate('ct.sending');
+      window.location.href = mail;
 
-    setTimeout(() => {
-      sendLabel.textContent = translate('ct.send');
-      send.disabled = false;
-      status.textContent = translate('ct.sent');
-    }, 1400);
+      setTimeout(() => {
+        sendLabel.textContent = translate('ct.send');
+        send.disabled = false;
+        status.textContent = translate('ct.sent');
+      }, 1400);
+    } else {
+      /* no published inbox yet — point visitors at the phone line and
+         Instagram instead of pretending a message went anywhere */
+      status.textContent = translate('ct.noEmail');
+    }
   });
 
   for (const row of Object.values(rows)) {
